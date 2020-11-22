@@ -1,0 +1,348 @@
+/* --------------------------------------------------------
+    ベース設定
+  -------------------------------------------------------- */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+$main-color: #333; 
+a {
+  text-decoration: none;
+  display: inline-block;
+  &:hover {
+    opacity: 0.7;
+    transition: 0.5s;
+  }
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  color: $main-color;
+  font-weight: normal;
+  font-family: 'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
+  line-height: 1;
+  background-color: white;
+  overflow-x: hidden;
+  // overflow-xプロパティは、ボックスの範囲内に内容が収まらない収まらない場合に、はみ出た要素の左右の表示方法を指定する際に使用します。  
+  letter-spacing: 0.05em;
+  // 文字間隔
+}
+
+p {
+  line-height: 1.8;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.pc {
+  @media screen and (min-width:769px) {
+     //画面サイズが768px以上の時
+     display: block;
+  } 
+  @media screen and (max-width:768px) {
+    //画面サイズが768px以下の時
+    display: none;
+  }
+}
+
+.sp {
+  @media screen and (min-width:769px) { 
+    //画面サイズが768px以上の時
+    display: none;
+  }
+  @media screen and (max-width:768px) { 
+    //画面サイズが767px以下の時
+    display: block;
+  }
+}
+
+.container {
+  display: block;
+  width: 100%;
+  max-width: 1020px;
+  // 狭いブラウザとタブレット向けだと思われる
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*共通パーツ
+--------------------------------------------------------*/
+.section {
+  &_title{
+    display: inline-block;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 1;
+    padding-bottom: 12px;
+    margin-bottom: 70px;
+    border-bottom: 5px solid #F2632D;
+    @media screen and (max-width:768px) {
+       //画面サイズが768px以下の時
+       font-size: 30px;
+       padding-bottom: 12px;
+       margin-bottom: 12px;
+    }
+  }
+}
+.btn{
+  margin-top: 34px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  width: 140px;
+  text-align: center;
+  color: #F2632D;
+  border: 3px solid #F2632D;
+  border-radius: 25px;
+  @media screen and (max-width:768px) { 
+    //画面サイズが768px以下の時
+    margin-top: 30px;
+  }
+}
+/*各セクション
+--------------------------------------------------------*/
+.header {
+  height: 60px;
+  @media screen and (max-width: 768px) {
+     //画面サイズが768px以下の時
+     height: 88px;
+  }
+  &_inner {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media screen and (max-width:768px) {
+       //画面サイズが768px以下の時
+      flex-direction: column;
+      height: 88px;
+    }
+  } 
+  &_logo{
+    @media screen and (max-width:768px) { 
+      //画面サイズが768px以下の時
+      margin-top: 8px;
+      width: 180px;
+      height: 35px;
+    }
+  }
+  &_nav {
+    @media screen and (max-width:768px) {
+      //画面サイズが768px以下の時
+      width: 100%;
+      padding-bottom: 11px;
+    }
+  }
+  &_list {
+    width: 218px;
+    display: flex;
+    justify-content: space-between;
+    @media screen and (max-width:768px) {
+       //画面サイズが768px以下の時
+      width: 213px;
+      margin: 0 auto;
+    }
+  }
+
+  &_item {
+    font-size: 18px;
+    font-weight: bold;
+    list-style: none;
+    a {
+      color: #333;
+    }
+    @media screen and (max-width:768px) { 
+      font-size: 16px;
+    }
+  }
+}
+
+/*mv
+--------------------------------------------------------*/
+
+.mv{
+  background-image: url(../img/mainvisual.jpg);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (min-width:1281px) { 
+    //画面サイズが1281px以上の時
+    width: 100vw;
+    max-width: 2000px;
+    height: 46.8vw;
+    max-height: 936px;
+    margin: 0 auto;
+  }
+  @media screen and (max-width:1280px) { 
+    //画面サイズが1280px以下の時
+    height: 46.8vw;
+  }
+  @media screen and (max-width:768px) { 
+    //画面サイズが768px以下の時
+    background-position: center;
+    height: 96vw;
+  }
+}
+
+.menu {
+  .container {
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 0;
+    @media screen and (max-width:1024){
+       //画面サイズが1024px以下の時
+       width: 80%;
+    }
+    @media screen and (max-width:768px) {
+      //画面サイズが768px以下の時
+      width: 100%;
+      padding-top: 70px;
+      padding-bottom: 0px;
+    }
+  }
+  &_list {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+    list-style: none;
+    @media screen and (max-width:1024px) {
+       //画面サイズが1024px以下の時
+       padding-left: 0;
+       padding-right: 0;
+    }
+    @media screen and (max-width:768px){
+       //画面サイズが768px以下の時
+       flex-direction: column;
+       align-items: center;
+    }
+  }
+  &_item {
+    width: 25.5%;
+    max-width: 220px;
+    @media screen and (max-width:768px){
+       //画面サイズが768px以下の時
+       width: 57.9%;
+       max-width: 100%;
+       img {
+         width: 100%;
+       }
+       &:nth-child(n+2){
+        padding-top: 50px;
+      }
+    }
+    &-title {
+      font-size: 32px;
+      line-height: 1;
+      padding-top: 20px;
+      font-weight: bold;
+      @media screen and (max-width:768px){
+         //画面サイズが768px以下の時
+         font-style: 28px;
+         padding-top: 11px;  
+      }
+    }
+    &-desc {
+      font-size: 20px;
+      line-height: 1;
+      padding-top: 23px;
+      @media screen and (max-width:768px){
+         //画面サイズが768px以下の時
+         font-size: 16px;
+         padding-top: 11px;
+      }
+    }
+  }
+}
+
+.about {
+  .container {
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 100px;
+
+    @media screen and (max-width:1024px) { 
+      //画面サイズが1024px以下の時
+      width: 80%;
+    }
+
+    @media screen and (max-width:768px){
+      width: 100%;
+      padding-top: 100px;
+      padding-bottom: 60px;      
+    }
+  }
+  &_box {
+    display: flex;
+    justify-content: space-between;
+    @media screen and (max-width:1024px){
+      flex-direction: column;      
+    }
+    &-left {
+      width: 100%;
+      max-width: 405px;
+      text-align: left;
+      letter-spacing: 0;
+      @media screen and (max-width:1024px) {
+        //画面サイズが1024px以下の時
+        max-width: 100%;
+        text-align: center;
+      }
+      h3{
+        margin-top: -11px;
+        font-size: 32px;
+        font-weight: bold;
+        line-height: 54px;
+        color: #555555;
+        @media screen and (max-width:768px) {
+          font-size: 26px;
+          line-height: 44px;
+        }
+      }
+      p{
+        font-size: 22px;
+        line-height: 37px;
+        padding-top: 12px;
+        @media screen and (max-width:768px) {
+          font-size: 16px;
+          line-height: 27px;
+        }
+      }
+    }
+    &-right{
+      width: 100%;
+      max-width: 450px;
+      @media screen and (max-width:1024px) { 
+        //画面サイズが1024px以下の時
+        max-width: 100%;
+        padding-top: 50px;
+        img{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.copy{
+  font-size: 12px;
+  background-color: #D5D5D5;
+  color: #FFFFFF;
+  line-height: 50px;
+  height: 50px;
+  text-align: center;
+}
+
